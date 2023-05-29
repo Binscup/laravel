@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Bazmacontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CobaController;
 
@@ -36,3 +37,6 @@ Route::get("post/{postId}", function($postId = null){
 });
 Route::get("/coba/example", [CobaController::class, "example"]);
 Route::post("/coba/nested-input", [CobaController::class, 'nestedRequest']);
+Route::get("/response", [Bazmacontroller::class,'responseFunction']);
+Route::get("/response/header", [App\Http\Controllers\Bazmacontroller::class, 'responseHeader']);
+
