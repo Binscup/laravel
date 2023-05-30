@@ -38,5 +38,13 @@ Route::get("post/{postId}", function($postId = null){
 Route::get("/coba/example", [CobaController::class, "example"]);
 Route::post("/coba/nested-input", [CobaController::class, 'nestedRequest']);
 Route::get("/response", [Bazmacontroller::class,'responseFunction']);
+
 Route::get("/response/header", [App\Http\Controllers\Bazmacontroller::class, 'responseHeader']);
+Route::get("/enkripsi/code", [App\Http\Controllers\Bazmacontroller::class, 'encryptionData']);
+
+Route::get("/redirect/to", [App\Http\Controllers\Bazmacontroller::class, 'redirectTo']);
+Route::get("/redirect/from", [App\Http\Controllers\Bazmacontroller::class, 'redirectFrom']);
+
+Route::get("/redirect/to/named", [App\Http\Controllers\Bazmacontroller::class, 'redirectToNamedRoute'])->name("redirect.to");
+Route::get("/redirect/from/named", [App\Http\Controllers\Bazmacontroller::class, 'redirectFromNamedRoute']);
 
